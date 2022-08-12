@@ -10,30 +10,45 @@
   <body>
     <div class="content">
       <form action="">
-        <label for="city">Enter city name: </label>
+        <label for="city">Enter city name </label>
         <input type="text" name="city" id="city" required />
+        <div>
+          <label for="fahren">In fahrenheit</label>
+          <input type="checkbox" name="fahren" id="fahren" />
+        </div>
         <button type="button" class="weather-btn">Get weather</button>
       </form>
       <div class="weather-info">
         <div class="location-item weather-item">
           <div class="label">Location</div>
-          <div class="location"></div>
+          <div class="location data"></div>
         </div>
         <div class="temperature-item weather-item">
           <div class="label">Temperature</div>
-          <div class="temperature"></div>
+          <div class="temperature data"></div>
         </div>
         <div class="humidity-item weather-item">
           <div class="label">Humidity</div>
-          <div class="humidity"></div>
+          <div class="humidity data"></div>
         </div>
         <div class="wind-item weather-item">
           <div class="label">Wind</div>
-          <div class="wind"></div>
+          <div class="wind data"></div>
         </div>
         <div class="weather-item weather-item">
           <div class="label">Weather</div>
-          <div class="weather"></div>
+          <div class="weather data"></div>
+        </div>
+        <div class="weather-item weather-item">
+          <div class="label">Illustration</div>
+          <img
+            src=""
+            alt=""
+            width="200px"
+            height="200px"
+            class="illustration"
+            hidden
+          />
         </div>
       </div>
     </div>
