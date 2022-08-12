@@ -39,14 +39,33 @@ async function GetWeatherObject(location) {
   }
 }
 
-async function logWeatherData() {
-  const bp = await GetWeatherObject("Budapest");
-  const l = await GetWeatherObject("London");
-  const vp = await GetWeatherObject("Veszprém");
-  const asd = await GetWeatherObject("asd");
-  console.log(bp);
-  console.log(l);
-  console.log(vp);
-  console.log(asd);
+async function logWeatherData(location) {
+  const weather = await GetWeatherObject(location);
+  console.log(weather);
 }
-logWeatherData();
+
+const input = document.querySelector("#city");
+const weatherBtn = document.querySelector(".weather-btn");
+const city = document.querySelector(".location");
+const temperature = document.querySelector(".temperature");
+const humidity = document.querySelector(".humidity");
+const wind = document.querySelector(".wind");
+const weather = document.querySelector(".weather");
+
+let weatherObj;
+weatherBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  if (input.validity.valueMissing) {
+    alert("Choose a location!");
+  } else {
+    const weatherTempObj = await GetWeatherObject(input.value);
+    if (weatherTempObj) {
+      weatherObj = weatherTempObj;
+      city.textContent = weatherObj.city;
+      temperature.textContent = weatherObj.GetTemperature(true);
+      humidity.textContent = weatherObj.humidity;
+      wind.textContent = weatherObj.wind;
+      weather.textContent = weatherObj.weather;
+    }
+  }
+});

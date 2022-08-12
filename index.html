@@ -8,6 +8,35 @@
     <title>Weather App</title>
   </head>
   <body>
+    <div class="content">
+      <form action="">
+        <label for="city">Enter city name: </label>
+        <input type="text" name="city" id="city" required />
+        <button type="button" class="weather-btn">Get weather</button>
+      </form>
+      <div class="weather-info">
+        <div class="location-item weather-item">
+          <div class="label">Location</div>
+          <div class="location"></div>
+        </div>
+        <div class="temperature-item weather-item">
+          <div class="label">Temperature</div>
+          <div class="temperature"></div>
+        </div>
+        <div class="humidity-item weather-item">
+          <div class="label">Humidity</div>
+          <div class="humidity"></div>
+        </div>
+        <div class="wind-item weather-item">
+          <div class="label">Wind</div>
+          <div class="wind"></div>
+        </div>
+        <div class="weather-item weather-item">
+          <div class="label">Weather</div>
+          <div class="weather"></div>
+        </div>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
